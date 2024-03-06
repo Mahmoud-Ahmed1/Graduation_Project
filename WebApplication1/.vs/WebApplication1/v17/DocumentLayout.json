@@ -1,0 +1,79 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\.net\\Graduation_Project-main\\WebApplication1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F2CF7A4F-90B6-42F6-92A8-8B85174E21BC}|WebApplication1\\WebApplication1.csproj|d:\\.net\\graduation_project-main\\webapplication1\\webapplication1\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2CF7A4F-90B6-42F6-92A8-8B85174E21BC}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2CF7A4F-90B6-42F6-92A8-8B85174E21BC}|WebApplication1\\WebApplication1.csproj|d:\\.net\\graduation_project-main\\webapplication1\\webapplication1\\repository\\repository\\projectsrepository\\projectsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2CF7A4F-90B6-42F6-92A8-8B85174E21BC}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\repository\\repository\\projectsrepository\\projectsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2CF7A4F-90B6-42F6-92A8-8B85174E21BC}|WebApplication1\\WebApplication1.csproj|d:\\.net\\graduation_project-main\\webapplication1\\webapplication1\\repository\\repository\\projectsrepository\\iprojectsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2CF7A4F-90B6-42F6-92A8-8B85174E21BC}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\repository\\repository\\projectsrepository\\iprojectsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProjectController.cs",
+              "DocumentMoniker": "D:\\.net\\Graduation_Project-main\\WebApplication1\\WebApplication1\\Controllers\\ProjectController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ProjectController.cs",
+              "ToolTip": "D:\\.net\\Graduation_Project-main\\WebApplication1\\WebApplication1\\Controllers\\ProjectController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\ProjectController.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAA1wFsAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T14:41:39.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProjectsRepository.cs",
+              "DocumentMoniker": "D:\\.net\\Graduation_Project-main\\WebApplication1\\WebApplication1\\Repository\\Repository\\ProjectsRepository\\ProjectsRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Repository\\Repository\\ProjectsRepository\\ProjectsRepository.cs",
+              "ToolTip": "D:\\.net\\Graduation_Project-main\\WebApplication1\\WebApplication1\\Repository\\Repository\\ProjectsRepository\\ProjectsRepository.cs",
+              "RelativeToolTip": "WebApplication1\\Repository\\Repository\\ProjectsRepository\\ProjectsRepository.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T14:41:28.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IProjectsRepository.cs",
+              "DocumentMoniker": "D:\\.net\\Graduation_Project-main\\WebApplication1\\WebApplication1\\Repository\\Repository\\ProjectsRepository\\IProjectsRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Repository\\Repository\\ProjectsRepository\\IProjectsRepository.cs",
+              "ToolTip": "D:\\.net\\Graduation_Project-main\\WebApplication1\\WebApplication1\\Repository\\Repository\\ProjectsRepository\\IProjectsRepository.cs",
+              "RelativeToolTip": "WebApplication1\\Repository\\Repository\\ProjectsRepository\\IProjectsRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T14:41:28.068Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
