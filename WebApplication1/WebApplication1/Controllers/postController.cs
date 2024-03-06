@@ -790,7 +790,7 @@ namespace WebApplication1.Controllers
         }
 
 
-        [HttpGet("GetBookmark/id:int ")]
+        [HttpGet("GetBookmark")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
