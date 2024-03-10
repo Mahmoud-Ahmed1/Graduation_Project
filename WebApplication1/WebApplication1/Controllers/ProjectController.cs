@@ -88,12 +88,55 @@ namespace WebApplication1.Controllers
         }
 
 
- 
+
+        [HttpGet("GetPendingProject")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult> GetPendingProjects()
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var opject = await _projectsRepository.GetAllPendingProjects();
+            if (opject == null)
+                return NotFound();
+            return Ok(opject);
+        }
+
+        [HttpGet("GetApprovedProjects")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult> GetApprovedProjects()
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var opject = await _projectsRepository.GetAllApprovedProjects();
+            if (opject == null)
+                return NotFound();
+            return Ok(opject);
+        }
+
+
+        [HttpGet("GetRejectedProjects")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult> GetRejectedProjects()
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var opject = await _projectsRepository.GetAllRejectedProjects();
+            if (opject == null)
+                return NotFound();
+            return Ok(opject);
+        }
+
         [HttpDelete("DeleteFiles")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult<ProjectDto>> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             if (id == 0)
                 return BadRequest();
@@ -101,7 +144,7 @@ namespace WebApplication1.Controllers
             var userId = userIdClaim.Value;
             if (userId == null)
                 return BadRequest();
-            var opject = await _projectsRepository.Get(e => e.Id == id);
+            var opject = await _projectsRepository.GetFileById(e => e.Id == id);
             if (opject == null)
                 return NotFound();
 
@@ -119,11 +162,11 @@ namespace WebApplication1.Controllers
                 }
             }
 
-            var projectEventOpject = await _projectsRepository.GetProjectEventById(q => q.Id == id);
-            if (projectEventOpject.userid == userId)
+          //  var projectEventOpject = await _projectsRepository.GetProjectEventById(q => q.Id == id);
+            if (opject.UserId == userId)
             {
                 await _projectsRepository.Remove(opject);
-                await _projectsRepository.Remove(projectEventOpject);
+               // await _projectsRepository.Remove(projectEventOpject);
 
             }
             return NoContent();

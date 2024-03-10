@@ -74,12 +74,80 @@ namespace WebApplication1.Repository.Repository.ProjectsRepository
                     totallike = q.totallike,
                     totaldislike = q.totaldislike,
                     totalcomment = q.totalcomment,
+                    Brief=q.Brief,
+                    Status=q.Status,
                     // Include only the UserName property from the appUser navigation property
                     UserName = q.AppUser.UserName
                 });
 
             return await query.ToListAsync();
         }
+
+        public async Task<List<Projects>> GetAllPendingProjects()
+        {
+            IQueryable<Projects> query = _appDbcontext1.projects
+                .Include(q => q.AppUser)
+                .Select(q => new Projects
+                {
+                    Id = q.Id,
+                    FileName = q.FileName,
+                    FilePath = q.FilePath,
+                    UserId = q.UserId,
+                    totallike = q.totallike,
+                    totaldislike = q.totaldislike,
+                    totalcomment = q.totalcomment,
+                    Brief = q.Brief,
+                    Status = q.Status,
+                    // Include only the UserName property from the appUser navigation property
+                    UserName = q.AppUser.UserName
+                }).Where(q => q.Status == "Pending");
+
+            return await query.ToListAsync();
+        }
+
+        public async Task<List<Projects>> GetAllApprovedProjects()
+        {
+            IQueryable<Projects> query = _appDbcontext1.projects
+                .Include(q => q.AppUser)
+                .Select(q => new Projects
+                {
+                    Id = q.Id,
+                    FileName = q.FileName,
+                    FilePath = q.FilePath,
+                    UserId = q.UserId,
+                    totallike = q.totallike,
+                    totaldislike = q.totaldislike,
+                    totalcomment = q.totalcomment,
+                    Brief = q.Brief,
+                    Status = q.Status,
+                    // Include only the UserName property from the appUser navigation property
+                    UserName = q.AppUser.UserName
+                }).Where(q => q.Status == "Approved");
+
+            return await query.ToListAsync();
+        }
+        public async Task<List<Projects>> GetAllRejectedProjects()
+        {
+            IQueryable<Projects> query = _appDbcontext1.projects
+                .Include(q => q.AppUser)
+                .Select(q => new Projects
+                {
+                    Id = q.Id,
+                    FileName = q.FileName,
+                    FilePath = q.FilePath,
+                    UserId = q.UserId,
+                    totallike = q.totallike,
+                    totaldislike = q.totaldislike,
+                    totalcomment = q.totalcomment,
+                    Brief = q.Brief,
+                    Status = q.Status,
+                    // Include only the UserName property from the appUser navigation property
+                    UserName = q.AppUser.UserName
+                }).Where(q => q.Status == "Rejected");
+
+            return await query.ToListAsync();
+        }
+
         public async Task<ProjectEvent> GetProjectEventById(Expression<Func<ProjectEvent, bool>> filter = null, bool tracked = true)
         {
             IQueryable<ProjectEvent> query = _appDbcontext1.projectEvents;

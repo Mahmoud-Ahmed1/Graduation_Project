@@ -12,6 +12,9 @@ namespace WebApplication1.Repository.Repository.ProjectsRepository
         Task<Projects> GetFileById(Expression<Func<Projects, bool>> filter = null, bool tracked = true);
         Task<List<Projects>> GetAllProjects();
         Task<ProjectEvent> GetProjectEventById(Expression<Func<ProjectEvent, bool>> filter = null, bool tracked = true);
+         Task<List<Projects>> GetAllPendingProjects();
+        Task<List<Projects>> GetAllApprovedProjects();
+        Task<List<Projects>> GetAllRejectedProjects();
         //Task<ProjectEvent> GetSpeciaProjectEvent(Expression<Func<ProjectEvent, bool>> filter = null, bool tracked = true);
         //Task RemoveProjectEvent(ProjectEvent entity);
         // Task<List<ProjectEvent>> GetProjectEvent(Expression<Func<ProjectEvent, bool>> filter = null, bool tracked = true);

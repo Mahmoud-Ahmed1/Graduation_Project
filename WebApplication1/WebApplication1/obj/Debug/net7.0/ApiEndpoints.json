@@ -1758,7 +1758,7 @@
   {
     "ContainingType": "WebApplication1.Controllers.postController",
     "Method": "GetBookmark",
-    "RelativePath": "api/post/GetBookmark/id:int ",
+    "RelativePath": "api/post/GetBookmark",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -3106,6 +3106,31 @@
   },
   {
     "ContainingType": "WebApplication1.Controllers.ProjectController",
+    "Method": "GetApprovedProjects",
+    "RelativePath": "api/Project/GetApprovedProjects",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.ProjectController",
     "Method": "GetBookmark",
     "RelativePath": "api/Project/GetBookmark/id:int ",
     "HttpMethod": "GET",
@@ -3315,6 +3340,56 @@
           "text/json"
         ],
         "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.ProjectController",
+    "Method": "GetPendingProjects",
+    "RelativePath": "api/Project/GetPendingProject",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.ProjectController",
+    "Method": "GetRejectedProjects",
+    "RelativePath": "api/Project/GetRejectedProjects",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
       }
     ]
   },
