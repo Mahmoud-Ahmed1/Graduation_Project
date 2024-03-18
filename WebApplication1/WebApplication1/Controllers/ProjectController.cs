@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Build.Evaluation;
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.Hosting;
 using System.Security.Claims;
 
 using WebApplication1.models;
@@ -400,13 +402,13 @@ namespace WebApplication1.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<post>> Deletecomment(int projectid)
+        public async Task<ActionResult<post>> Deletecomment(int ProjectEvent)
         {
             var userIdClaim = (HttpContext.User.Identity as ClaimsIdentity)?.Claims.FirstOrDefault(c => c.Type == "uid");
             var userId = userIdClaim.Value;
-            var existingcomment = await _projectsRepository.GetSpecialEntity<ProjectEvent>(e => e.projectId == projectid && e.userid == userId && e.typeEvent == "comment");
+            var existingcomment = await _projectsRepository.GetSpecialEntity<ProjectEvent>(e => e.Id == ProjectEvent && e.userid == userId && e.typeEvent == "comment");
 
-            if (projectid == 0 || userId == null)
+            if (ProjectEvent == 0 || userId == null)
                 return BadRequest();
 
             if (existingcomment == null)
@@ -448,6 +450,45 @@ namespace WebApplication1.Controllers
 
 
 
+        [HttpGet("GetAllComment")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<ProjectEvent>> GetAllComment()
+
+        {
+            var Events = await _projectsRepository.GetAllTEntity<ProjectEvent>(r=>r.typeEvent== "comment");
+            if (Events == null)
+                return NotFound();
+            var filteredComments = new List<object>();
+
+
+            foreach (var Event in Events)
+            {
+                var user = await _projectsRepository.GetSpecialEntity<ApplicationUser>(r => r.Id == Event.userid);
+                
+                var Model = new
+                {
+                    Id = Event.Id,
+                    typeEvent = Event.typeEvent,
+                    eventDate = Event.eventDate,
+                    userid = Event.userid,
+                    text = Event.text,
+                
+                    Projectid = Event.projectId,
+
+                    UserName = user.UserName,
+                    imgeurl = user.imgeurl,
+
+                };
+                filteredComments.Add(Model);
+            }
+            
+            
+
+            return Ok(filteredComments);
+        }
+         
         [HttpPost("Bookmark/id ")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
